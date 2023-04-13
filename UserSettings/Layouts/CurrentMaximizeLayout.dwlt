@@ -88,7 +88,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -226,9 +226,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 241affff
-      m_LastClickedID: -58844
-      m_ExpandedIDs: 081affff181affff241affff442effff3e62ffff9467ffffba8affffca8affffd68affffa08fffffd2aaffff38f1ffffc8f1ffff4cf2ffffe0f6ffffb2f8ffffc8faffffce890000e0890000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 28abfeff2e0dffff081affff181affff241affff442effff3e62ffff9467ffffba8affffca8affffd68affffa08fffffd2aaffff38f1ffffc8f1ffff4cf2ffffe0f6ffffb2f8ffffc8faffffce890000e0890000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -561,9 +561,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 528.56067, y: 1011.13, z: 15.700941}
+    m_Target: {x: 595.61957, y: 1680.7095, z: 35.58328}
     speed: 2
-    m_Value: {x: 528.56067, y: 1011.13, z: 15.700941}
+    m_Value: {x: 595.61957, y: 1680.7095, z: 35.58328}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -614,9 +614,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 666.6123
+    m_Target: 235.77945
     speed: 2
-    m_Value: 666.6123
+    m_Value: 235.77945
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1341,22 +1341,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Graphics/Buttons
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Graphics/Buttons
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\vadim\Documents\GitHub\MarsMan
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 946c0000
-    m_LastClickedID: 27796
-    m_ExpandedIDs: 00000000946c0000e46c00009e7400003479000000ca9a3b
+    m_SelectedIDs: 52820000
+    m_LastClickedID: 33362
+    m_ExpandedIDs: 00000000946c0000b06c0000e46c00009e7400003479000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1384,7 +1384,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000946c0000
+    m_ExpandedIDs: 00000000946c0000e46c00009e7400003479000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1409,9 +1409,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 241affff
-    m_LastClickedInstanceID: -58844
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000e285000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
