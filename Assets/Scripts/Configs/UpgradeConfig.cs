@@ -2,9 +2,10 @@ using System;
 
 
 [Serializable]
-public class UpdateConfig
+public class UpgradeConfig
 {
+    public string Name;
     public bool UpdateIs;
     public int UpdateCost;
-    public int UpdateIncome;
+    public float UpdateIncome;
 }

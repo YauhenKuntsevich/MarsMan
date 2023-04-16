@@ -12,4 +12,79 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Buildings Configs
   m_EditorClassIdentifier: Assembly-CSharp::BuildingsConfigs
-  _buildings: []
+  _buildings:
+  - Name: 
+    Level: 0
+    IncomeDelay: 0
+    BasicCost: 0
+    BasicIncome: 0
+    Update1:
+      Name: 
+      UpdateIs: 0
+      UpdateCost: 0
+      UpdateIncome: 0
+    Update2:
+      Name: 
+      UpdateIs: 0
+      UpdateCost: 0
+      UpdateIncome: 0
+  - Name: 
+    Level: 0
+    IncomeDelay: 0
+    BasicCost: 0
+    BasicIncome: 0
+    Update1:
+      Name: 
+      UpdateIs: 0
+      UpdateCost: 0
+      UpdateIncome: 0
+    Update2:
+      Name: 
+      UpdateIs: 0
+      UpdateCost: 0
+      UpdateIncome: 0
+  - Name: 
+    Level: 0
+    IncomeDelay: 0
+    BasicCost: 0
+    BasicIncome: 0
+    Update1:
+      Name: 
+      UpdateIs: 0
+      UpdateCost: 0
+      UpdateIncome: 0
+    Update2:
+      Name: 
+      UpdateIs: 0
+      UpdateCost: 0
+      UpdateIncome: 0
+  - Name: 
+    Level: 0
+    IncomeDelay: 0
+    BasicCost: 0
+    BasicIncome: 0
+    Update1:
+      Name: 
+      UpdateIs: 0
+      UpdateCost: 0
+      UpdateIncome: 0
+    Update2:
+      Name: 
+      UpdateIs: 0
+      UpdateCost: 0
+      UpdateIncome: 0
+  - Name: 
+    Level: 0
+    IncomeDelay: 0
+    BasicCost: 0
+    BasicIncome: 0
+    Update1:
+      Name: 
+      UpdateIs: 0
+      UpdateCost: 0
+      UpdateIncome: 0
+    Update2:
+      Name: 
+      UpdateIs: 0
+      UpdateCost: 0
+      UpdateIncome: 0

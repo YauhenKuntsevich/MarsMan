@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class Balance : MonoBehaviour
 {
-   private static long _money = 20;
+   private long _money = 20;
 
-    public static long Money
+    public long Money
     {
         get => _money;
         set => _money = value;
