@@ -1,37 +1,41 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using Debug = System.Diagnostics.Debug;
 
-public class BalanceController : MonoBehaviour
+namespace Controllers
 {
-    [SerializeField] private TMP_Text _balanceText;
-
-    private Balance _balance;
-
-    private void Update()
+    public class BalanceController : MonoBehaviour
     {
-        _balanceText.text = "Баланс: " + _balance.Money;
-    }
+        [SerializeField] private TMP_Text _balanceText;
 
-    public bool BalanceCheck(int amount)
-    {
-        return amount <= _balance.Money;
-    }
-    
-    public void AddBalance(int income)
-    {
-        _balance.Money += income;
-    }
+        private long Money { get; set; }
 
-    public void WithdrawFromBalance(int amount)
-    {
-        if (BalanceCheck(amount))
+        private void Start()
         {
-            _balance.Money -= amount;
+            Money = 4;
+            Console.WriteLine(Money);
+        }
+        private void Update()
+        {
+            _balanceText.text = "Balance: " + Money;
+        }
+
+        public bool BalanceCheck(int amount)
+        {
+            return amount <= Money;
+        }
+    
+        public void AddBalance(int income)
+        {
+            Money += income;
+        }
+
+        public void WithdrawFromBalance(int amount)
+        {
+            if (BalanceCheck(amount))
+            {
+                Money -= amount;
+            }
         }
     }
 }

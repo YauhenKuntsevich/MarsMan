@@ -1,4 +1,5 @@
 ﻿using System;
+using Configs;
 using UnityEngine;
 
 namespace UI
@@ -9,9 +10,7 @@ namespace UI
         [SerializeField] private RectTransform _content;
 
         [SerializeField] private BuildingsConfigs _buildingsConfigs;
-
-        private Balance _balance;
-
+        
         private void Awake()
         {
             for (int i = 0; i < _buildingsConfigs.Buildings.Length; i++)
@@ -30,7 +29,7 @@ namespace UI
 
                 buildingInstance.DrawBuilding(
                     active,
-                    _buildingsConfigs.Buildings[i]);
+                    buildingConfig);
             }
         }
     }

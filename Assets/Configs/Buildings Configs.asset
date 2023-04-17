@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 491e3a16191a4c6d88ae77df69c2bdaf, type: 3}
   m_Name: Buildings Configs
-  m_EditorClassIdentifier: Assembly-CSharp::BuildingsConfigs
+  m_EditorClassIdentifier: 
   _buildings:
-  - Name: "1 \u0437\u0434\u0430\u043D\u0438\u0435"
-    Level: 0
+  - Name: "\u0417\u0434\u0430\u043D\u0438\u04351"
+    Level: 1
     IncomeDelay: 0
     BasicCost: 3
     BasicIncome: 0
     Update1:
-      Name: "\u0443\u043B\u0443\u0447\u0448 1"
+      Name: "\u0443\u043B\u0443\u0447\u04481"
       UpdateIs: 0
       UpdateCost: 0
       UpdateIncome: 0
@@ -28,10 +28,10 @@ MonoBehaviour:
       UpdateIs: 0
       UpdateCost: 0
       UpdateIncome: 0
-  - Name: "2 \u0437\u0434\u0430\u043D\u0438\u0435"
+  - Name: "\u0437\u0434\u0430\u043D\u0438\u04352"
     Level: 0
     IncomeDelay: 0
-    BasicCost: 0
+    BasicCost: 40
     BasicIncome: 0
     Update1:
       Name: 

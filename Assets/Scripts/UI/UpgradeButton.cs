@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Controllers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +25,7 @@ namespace UI
             else
             {
                 _buttonText.text = _upgrade.Name + "\n" + _upgrade.UpdateCost;
-                _button.interactable = _balanceController.BalanceCheck(_upgrade.UpdateCost);
+//                _button.interactable = _balanceController.BalanceCheck(_upgrade.UpdateCost);
             }
             
             _button.onClick.AddListener(OnClick);
