@@ -17,12 +17,12 @@ public class BalanceController : MonoBehaviour
         _balanceText.text = "Баланс: " + _balance.Money;
     }
 
-    private bool BalanceCheck(int amount)
+    public bool BalanceCheck(int amount)
     {
         return amount <= _balance.Money;
     }
     
-    private void AddBalance(int income)
+    public void AddBalance(int income)
     {
         _balance.Money += income;
     }

@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class UpgradeController : MonoBehaviour
 {
-    public UpgradeController(int upgradeCost, int upgradeIncome)
+    private UpgradeConfig _upgradeConfig;
+    
+    private void BuyUpgrade()
     {
-        UpgradeCost = upgradeCost;
-        UpgradeIncome = upgradeIncome;
+        
     }
-
-    public int UpgradeCost { get; set; } //Стоимость улучшения
-    public int UpgradeIncome { get; set; } //Бафф от улучшения
-
-    public bool UpgradeIs { get; set; } = false;
 }

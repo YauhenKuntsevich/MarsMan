@@ -1,13 +1,28 @@
-public class BuildingController
+using UnityEngine;
+
+public class BuildingController : MonoBehaviour
 {
-    private BuildingConfig _buildingConfig;
-    public float IncomeCalculation()
+    [SerializeField] private BuildingsConfigs _buildingsConfigs;
+    
+    public int IncomeCalculation(BuildingConfig buildingConfig)
     {
-        return _buildingConfig.Level * _buildingConfig.BasicIncome * (1 + _buildingConfig.Update1.UpdateIncome + _buildingConfig.Update2.UpdateIncome);
+        return (int)(buildingConfig.Level * buildingConfig.BasicIncome * (1 + buildingConfig.Update1.UpdateIncome + buildingConfig.Update2.UpdateIncome));
     }
 
-    public int LevelCost()
+    public int LevelCost(int level, int basicCost)
     {
-        return (_buildingConfig.Level + 1) * _buildingConfig.BasicCost;
+        return (level + 1) * basicCost;
+    }
+
+    public void ChangeLevel(string buildingName)
+    {
+        foreach (var building in _buildingsConfigs.Buildings)
+        {
+            if (building.Name == buildingName)
+            {
+                building.Level++;
+                return;
+            }
+        }
     }
 }
