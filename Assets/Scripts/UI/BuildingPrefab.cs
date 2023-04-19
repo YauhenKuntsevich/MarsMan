@@ -22,7 +22,6 @@ namespace UI
         public void DrawBuilding(bool active, BuildingConfig building)
         {
             _buildingNameText.text = building.Name;
-            _buildingLevelText.text = building.Level.ToString();
             _upgrade1 = building.Update1;
             _upgrade2 = building.Update2;
             

@@ -1,9 +1,23 @@
+using System;
 using Configs;
+using TMPro;
 using UnityEngine;
 
-public class BuildingController : MonoBehaviour
+public sealed class BuildingController : MonoBehaviour
 {
     [SerializeField] private BuildingsConfigs _buildingsConfigs;
+    
+    private BuildingController() { }
+        
+    private static BuildingController _instance;
+    public static BuildingController GetInstance()
+    {
+        if (_instance == null)
+        {
+            _instance = new BuildingController();
+        }
+        return _instance;
+    }
     
     public int IncomeCalculation(BuildingConfig buildingConfig)
     {

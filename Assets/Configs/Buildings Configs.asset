@@ -21,25 +21,10 @@ MonoBehaviour:
     Update1:
       Name: "\u0443\u043B\u0443\u0447\u04481"
       UpdateIs: 0
-      UpdateCost: 0
+      UpdateCost: 10
       UpdateIncome: 0
     Update2:
       Name: "\u0443\u043B\u0443\u0447\u04482"
       UpdateIs: 0
-      UpdateCost: 0
-      UpdateIncome: 0
-  - Name: "\u0437\u0434\u0430\u043D\u0438\u04352"
-    Level: 0
-    IncomeDelay: 0
-    BasicCost: 40
-    BasicIncome: 0
-    Update1:
-      Name: 
-      UpdateIs: 0
-      UpdateCost: 0
-      UpdateIncome: 0
-    Update2:
-      Name: 
-      UpdateIs: 0
-      UpdateCost: 0
+      UpdateCost: 20
       UpdateIncome: 0

@@ -4,37 +4,32 @@ using UnityEngine;
 
 namespace Controllers
 {
-    public class BalanceController : MonoBehaviour
+    public sealed class BalanceController : MonoBehaviour
     {
-        [SerializeField] private TMP_Text _balanceText;
+        private BalanceController() { }
+        
+        private static BalanceController _instance;
+        private readonly BalanceModel _balanceModel;
 
-        private long Money { get; set; }
-
-        private void Start()
+        public static BalanceController GetInstance()
         {
-            Money = 4;
-            Console.WriteLine(Money);
-        }
-        private void Update()
-        {
-            _balanceText.text = "Balance: " + Money;
+            if (_instance == null)
+            {
+                _instance = new BalanceController();
+            }
+            return _instance;
         }
 
-        public bool BalanceCheck(int amount)
-        {
-            return amount <= Money;
-        }
-    
         public void AddBalance(int income)
         {
-            Money += income;
+            BalanceModel.Money += income;
         }
 
         public void WithdrawFromBalance(int amount)
         {
-            if (BalanceCheck(amount))
+            if (BalanceModel.BalanceCheck(amount))
             {
-                Money -= amount;
+                BalanceModel.Money -= amount;
             }
         }
     }

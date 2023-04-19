@@ -10,9 +10,9 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _buttonText;
         [SerializeField] private Button _button;
         
-        private BalanceController _balanceController;
+        private BalanceController _balanceController = BalanceController.GetInstance();
         private UpgradeConfig _upgrade;
-            
+
         public void DrawUpgrade(UpgradeConfig upgrade)
         {
             _upgrade = upgrade;
