@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1c203f451851d40a55b917d62d4445, type: 3}
   m_Name: Building_1
   m_EditorClassIdentifier: 
-  Name: 
-  Level: 0
-  IncomeDelay: 0
-  BasicCost: 0
-  BasicIncome: 0
+  Name: "\u0422\u0435\u043F\u043B\u0438\u0446\u044B"
+  Level: 5
+  IncomeDelay: 3
+  BasicCost: 3
+  BasicIncome: 4
   Update1:
     Name: 
     UpdateIs: 0

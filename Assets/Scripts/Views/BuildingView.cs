@@ -21,16 +21,16 @@ namespace Views
         [SerializeField] private UpgradeButton _upgradePrefab;
         [SerializeField] private UpgradeButton _upgrade2Prefab;
         [SerializeField] private RectTransform _content;
-
+        
         private readonly BuildingController _buildingController = BuildingController.GetInstance();
         private UpgradeConfig _upgrade1;
         private UpgradeConfig _upgrade2;
         
         public void DrawBuilding(BuildingConfig building)
         {
-            _buildingLevelText.text = building.Level.ToString();
+            _buildingLevelText.text = "LVL " + building.Level;
             _buildingNameText.text = building.Name;
-            _buildingIncomeText.text = _buildingController.IncomeCalculation(building).ToString();
+            _buildingIncomeText.text = "Доход: " + _buildingController.IncomeCalculation(building);
             _upgrade1 = building.Update1;
             _upgrade2 = building.Update2;
         }
@@ -53,6 +53,11 @@ namespace Views
 
         }
 
+        private void Update()
+        {
+            DrawBuilding(_buildingConfig);
+        }
+
         // private void Update()
         // {
         //     foreach (var building in _buildingsConfigs.Buildings)
@@ -71,14 +76,17 @@ namespace Views
                 yield return null;
             }
 
-            var elapsedTime = 0f;
-            while (elapsedTime < building.IncomeDelay)
+            while (true)
             {
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
+                var elapsedTime = 0f;
+                while (elapsedTime < building.IncomeDelay)
+                {
+                    elapsedTime += Time.deltaTime;
+                    yield return null;
+                }
 
-            BalanceModel.Money += _buildingController.IncomeCalculation(building);
+                BalanceModel.Money += _buildingController.IncomeCalculation(building);
+            }
         }
     }
 }

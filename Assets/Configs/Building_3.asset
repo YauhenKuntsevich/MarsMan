@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1c203f451851d40a55b917d62d4445, type: 3}
   m_Name: Building_3
   m_EditorClassIdentifier: 
-  Name: 
+  Name: "\u0428\u0430\u0445\u0442\u044B"
   Level: 0
   IncomeDelay: 0
   BasicCost: 0

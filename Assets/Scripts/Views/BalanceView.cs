@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Configs;
+using Models;
 using TMPro;
 using UnityEngine;
 
@@ -7,11 +8,6 @@ namespace Controllers
     public sealed class BalanceView : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _balanceText;
-        
-        private void Start()
-        {
-            BalanceModel.Money = 8;
-        }
 
         private void Update()
         {

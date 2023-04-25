@@ -836,11 +836,12 @@ MonoBehaviour:
   _buildingNameText: {fileID: 6450765018471100052}
   _buildingLevelText: {fileID: 6450765017883254763}
   _buildingIncomeText: {fileID: 6450765017905071192}
-  _buildingsConfigs: {fileID: 11400000, guid: c1ae0932a6f6b63478217ca375099e65, type: 2}
+  _buildingConfig: {fileID: 0}
   _levelUpPrefab: {fileID: 7536018621163775054, guid: d2d1ca8719d1dae4b8f1792b682a4bbe, type: 3}
   _upgradePrefab: {fileID: 9084315116321908980, guid: bc42414cdb59a7f438ef32315a3d6c06, type: 3}
   _upgrade2Prefab: {fileID: 9084315116321908980, guid: 41616d356f361444fb61e19541365fea, type: 3}
   _content: {fileID: 6450765018270832347}
+  _balanceConfig: {fileID: 11400000, guid: 78876ea1d1b156c4aae7f1ccf6703c0a, type: 2}
 --- !u!1 &6450765018471100054
 GameObject:
   m_ObjectHideFlags: 0
