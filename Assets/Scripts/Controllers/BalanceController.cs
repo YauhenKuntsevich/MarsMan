@@ -1,4 +1,5 @@
 using System;
+using Models;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,6 @@ namespace Controllers
         private BalanceController() { }
         
         private static BalanceController _instance;
-        private readonly BalanceModel _balanceModel;
 
         public static BalanceController GetInstance()
         {
@@ -27,10 +27,15 @@ namespace Controllers
 
         public void WithdrawFromBalance(int amount)
         {
-            if (BalanceModel.BalanceCheck(amount))
+            if (BalanceCheck(amount))
             {
                 BalanceModel.Money -= amount;
             }
+        }
+        
+        public bool BalanceCheck(int amount)
+        {
+            return amount <= BalanceModel.Money;
         }
     }
 }
