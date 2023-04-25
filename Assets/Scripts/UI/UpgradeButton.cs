@@ -10,7 +10,6 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _buttonText;
         [SerializeField] private Button _button;
         
-        private BalanceController _balanceController = BalanceController.GetInstance();
         private UpgradeConfig _upgrade;
 
         public void DrawUpgrade(UpgradeConfig upgrade)
@@ -25,7 +24,6 @@ namespace UI
             else
             {
                 _buttonText.text = _upgrade.Name + "\n" + _upgrade.UpdateCost;
-                _button.interactable = _balanceController.BalanceCheck(_upgrade.UpdateCost);
             }
             
             _button.onClick.AddListener(OnClick);
@@ -33,7 +31,7 @@ namespace UI
             
         private void OnClick()
         {
-            _balanceController.WithdrawFromBalance(_upgrade.UpdateCost);
+            //_balanceController.WithdrawFromBalance(_upgrade.UpdateCost);
             _upgrade.UpdateIs = true;
             DrawUpgrade(_upgrade);
         }

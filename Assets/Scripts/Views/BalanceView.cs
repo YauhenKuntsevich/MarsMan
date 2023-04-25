@@ -15,7 +15,7 @@ namespace Controllers
 
         private void Update()
         {
-            _balanceText.text = "Balance: " + BalanceModel.Money;
+            _balanceText.text = BalanceModel.Money.ToString();
         }
     }
 }

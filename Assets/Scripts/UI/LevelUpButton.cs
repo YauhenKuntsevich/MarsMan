@@ -22,7 +22,7 @@ public class LevelUpButton : MonoBehaviour
         _basicCost = basicCost;
         _name = bName;
 
-        _button.interactable = _balanceController.BalanceCheck(_buildingController.LevelCost(_level, _basicCost));
+        //_button.interactable = _balanceController.BalanceCheck(_buildingController.LevelCost(_level, _basicCost));
         
         _buttonText.text = "Поднять уровень\n" + (_level + 1) * _basicCost;
         
@@ -33,6 +33,5 @@ public class LevelUpButton : MonoBehaviour
     {
         DrawLevel(_level + 1, _basicCost, _name);
         _buildingController.ChangeLevel(_name);
-        //_balanceController.WithdrawFromBalance(_buildingController.LevelCost(_level, _basicCost));
     }
 }

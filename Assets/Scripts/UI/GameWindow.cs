@@ -1,12 +1,14 @@
 ﻿using System;
 using Configs;
+using Controllers;
 using UnityEngine;
+using Views;
 
 namespace UI
 {
     public class GameWindow : MonoBehaviour
     {
-        [SerializeField] private BuildingPrefab _buildingPrefab;
+        [SerializeField] private BuildingView _buildingPrefab;
         [SerializeField] private RectTransform _content;
 
         [SerializeField] private BuildingsConfigs _buildingsConfigs;
@@ -22,14 +24,12 @@ namespace UI
                 // Здание активно, если
                 // куплено предыдущее здание
                 // ИЛИ оно первое
-                bool active = 
-                    ((i - 1 >= 0 && _buildingsConfigs.Buildings[i - 1].Level > 0) ||
-                     i == 0) && 
-                    _buildingsConfigs.Buildings[i].Level > 0;
+                // bool active = 
+                //     ((i - 1 >= 0 && _buildingsConfigs.Buildings[i - 1].Level > 0) ||
+                //      i == 0) && 
+                //     _buildingsConfigs.Buildings[i].Level > 0;
 
-                buildingInstance.DrawBuilding(
-                    active,
-                    buildingConfig);
+                buildingInstance.DrawBuilding(buildingConfig);
             }
         }
     }
