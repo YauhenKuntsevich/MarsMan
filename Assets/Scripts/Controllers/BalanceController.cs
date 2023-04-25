@@ -1,12 +1,8 @@
-using System;
-using Configs;
 using Models;
-using TMPro;
-using UnityEngine;
 
 namespace Controllers
 {
-    public sealed class BalanceController : MonoBehaviour
+    public sealed class BalanceController
     {
         private BalanceController() { }
         
@@ -14,14 +10,12 @@ namespace Controllers
 
         public static BalanceController GetInstance()
         {
-            if (_instance == null)
-            {
-                _instance = new BalanceController();
-            }
+            if (_instance != null) return _instance;
+            _instance = new BalanceController();
             return _instance;
         }
 
-        public void AddBalance(int income)
+        public static void AddBalance(int income)
         {
             BalanceModel.Money += income;
         }

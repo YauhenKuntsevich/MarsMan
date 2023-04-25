@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Configs;
 using Controllers;
 using TMPro;
 using UnityEngine;
@@ -12,7 +12,6 @@ namespace UI
         [SerializeField] private Button _button;
         
         private BalanceController _balanceController = BalanceController.GetInstance();
-        private BuildingController _buildingController = BuildingController.GetInstance();
 
         private UpgradeConfig _upgrade;
 
@@ -20,14 +19,14 @@ namespace UI
         {
             _upgrade = upgrade;
 
-            if (_upgrade.UpdateIs)
+            if (_upgrade._updateIs)
             {
-                _buttonText.text = _upgrade.Name + "\nкуплено!";
+                _buttonText.text = _upgrade._name + "\nкуплено!";
                 _button.interactable = false;
             }
             else
             {
-                _buttonText.text = _upgrade.Name + "\n" + _upgrade.UpdateCost;
+                _buttonText.text = _upgrade._name + "\n" + _upgrade._updateCost;
             }
             
             _button.onClick.AddListener(OnClick);
@@ -35,16 +34,16 @@ namespace UI
 
         private void Update()
         {
-            if (!_upgrade.UpdateIs)
+            if (!_upgrade._updateIs)
             {
-                _button.interactable = _balanceController.BalanceCheck(_upgrade.UpdateCost);
+                _button.interactable = _balanceController.BalanceCheck(_upgrade._updateCost);
             }
         }
 
         private void OnClick()
         {
-            //_balanceController.WithdrawFromBalance(_upgrade.UpdateCost);
-            _upgrade.UpdateIs = true;
+            _upgrade._updateIs = true;
+            _balanceController.WithdrawFromBalance(_upgrade._updateCost);
             DrawUpgrade(_upgrade);
         }
     }

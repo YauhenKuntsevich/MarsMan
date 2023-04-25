@@ -1,9 +1,8 @@
-﻿using Configs;
-using Models;
+﻿using Models;
 using TMPro;
 using UnityEngine;
 
-namespace Controllers
+namespace Views
 {
     public sealed class BalanceView : MonoBehaviour
     {

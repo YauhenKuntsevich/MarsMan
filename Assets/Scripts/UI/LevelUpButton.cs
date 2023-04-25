@@ -1,41 +1,42 @@
-using System;
 using Configs;
 using Controllers;
 using TMPro;
-using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelUpButton : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private TextMeshProUGUI _buttonText;
-    [SerializeField] private Button _button;
-
-    private BalanceController _balanceController = BalanceController.GetInstance();
-    private BuildingController _buildingController = BuildingController.GetInstance();
-    private int _level;
-    private int _basicCost;
-    private BuildingConfig _buildingConfig;
-
-    public void DrawLevel(BuildingConfig buildingConfig)
+    public class LevelUpButton : MonoBehaviour
     {
-        _buildingConfig = buildingConfig;
-        _level = buildingConfig.Level;
-        _basicCost = buildingConfig.BasicCost;
+        [SerializeField] private TextMeshProUGUI _buttonText;
+        [SerializeField] private Button _button;
+
+        private readonly BalanceController _balanceController = BalanceController.GetInstance();
+        private readonly BuildingController _buildingController = BuildingController.GetInstance();
+        private int _level;
+        private int _basicCost;
+        private BuildingConfig _buildingConfig;
+
+        public void DrawLevel(BuildingConfig buildingConfig)
+        {
+            _buildingConfig = buildingConfig;
+            _level = buildingConfig._level;
+            _basicCost = buildingConfig._basicCost;
         
-        _buttonText.text = "Поднять уровень\n" + (_level + 1) * _basicCost;
+            _buttonText.text = "Поднять уровень\n" + (_level + 1) * _basicCost;
         
-        _button.onClick.AddListener(OnClick);
-    }
+            _button.onClick.AddListener(OnClick);
+        }
 
-    private void Update()
-    {
-        _button.interactable = _balanceController.BalanceCheck(_buildingController.LevelCost(_level, _basicCost));
-    }
+        private void Update()
+        {
+            _button.interactable = _balanceController.BalanceCheck(_buildingController.LevelCost(_level, _basicCost));
+        }
 
-    private void OnClick()
-    {
-        DrawLevel(_buildingConfig);
-        _buildingController.ChangeLevel(_buildingConfig);
+        private void OnClick()
+        {
+            DrawLevel(_buildingConfig);
+            _buildingController.ChangeLevel(_buildingConfig);
+        }
     }
 }

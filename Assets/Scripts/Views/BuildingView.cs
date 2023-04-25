@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Configs;
+using Controllers;
 using Models;
 using TMPro;
 using UI;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Views
 {
@@ -28,11 +26,11 @@ namespace Views
         
         public void DrawBuilding(BuildingConfig building)
         {
-            _buildingLevelText.text = "LVL " + building.Level;
-            _buildingNameText.text = building.Name;
+            _buildingLevelText.text = "LVL " + building._level;
+            _buildingNameText.text = building._name;
             _buildingIncomeText.text = "Доход: " + _buildingController.IncomeCalculation(building);
-            _upgrade1 = building.Update1;
-            _upgrade2 = building.Update2;
+            _upgrade1 = building._update1;
+            _upgrade2 = building._update2;
         }
 
         private void Start()
@@ -46,7 +44,7 @@ namespace Views
             upgrade1Instance.DrawUpgrade(_upgrade1);
             upgrade2Instance.DrawUpgrade(_upgrade2);
                 
-            if (_buildingConfig.Level >= 1)
+            if (_buildingConfig._level >= 1)
             {
                 StartCoroutine(ChangeMoney(_buildingConfig));
             }
@@ -71,7 +69,7 @@ namespace Views
 
         private IEnumerator ChangeMoney(BuildingConfig building)
         {
-            if (building.Level < 1)
+            if (building._level < 1)
             {
                 yield return null;
             }
@@ -79,7 +77,7 @@ namespace Views
             while (true)
             {
                 var elapsedTime = 0f;
-                while (elapsedTime < building.IncomeDelay)
+                while (elapsedTime < building._incomeDelay)
                 {
                     elapsedTime += Time.deltaTime;
                     yield return null;

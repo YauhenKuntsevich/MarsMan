@@ -1,46 +1,43 @@
-using System;
 using Configs;
-using Controllers;
-using TMPro;
-using UnityEngine;
 using Views;
 
-public sealed class BuildingController : MonoBehaviour
+namespace Controllers
 {
-   
-    private BuildingView _buildingPrefab;
-    private readonly BalanceController _balanceController = BalanceController.GetInstance();
+    public sealed class BuildingController 
+    {
+        private BuildingView _buildingPrefab;
     
-    private BuildingController() { }
+        private BuildingController() { }
         
-    private static BuildingController _instance;
-    public static BuildingController GetInstance()
-    {
-        if (_instance == null)
+        private static BuildingController _instance;
+        private BalanceController _balanceController = BalanceController.GetInstance();
+
+        public static BuildingController GetInstance()
         {
+            if (_instance != null) return _instance;
             _instance = new BuildingController();
+            return _instance;
         }
-        return _instance;
-    }
 
-    public int LevelCost(int level, int basicCost)
-    {
-        return (level + 1) * basicCost;
-    }
+        public int LevelCost(int level, int basicCost)
+        {
+            return (level + 1) * basicCost;
+        }
 
-    public void ChangeLevel(BuildingConfig _buildingConfig)
-    {
-        _balanceController.WithdrawFromBalance(LevelCost(_buildingConfig.Level, _buildingConfig.BasicCost));
-        _buildingConfig.Level++;
-    }
+        public void ChangeLevel(BuildingConfig buildingConfig)
+        {
+            _balanceController.WithdrawFromBalance(LevelCost(buildingConfig._level, buildingConfig._basicCost));
+            buildingConfig._level++;
+        }
 
-    public int IncomeCalculation(BuildingConfig buildingConfig)
-    {
-        return (int)(buildingConfig.Level * buildingConfig.BasicIncome * (1 + (buildingConfig.Update1.UpdateIs ? buildingConfig.Update1.UpdateIncome : 0) + (buildingConfig.Update2.UpdateIs ? buildingConfig.Update2.UpdateIncome : 0)));
-    }
+        public int IncomeCalculation(BuildingConfig buildingConfig)
+        {
+            return (int)(buildingConfig._level * buildingConfig._basicIncome * (1 + (buildingConfig._update1._updateIs ? buildingConfig._update1._updateIncome : 0) + (buildingConfig._update2._updateIs ? buildingConfig._update2._updateIncome : 0)));
+        }
 
-    public void AccrueIncome(BuildingConfig building)
-    {
-        _balanceController.AddBalance(IncomeCalculation(building));
+        // public void AccrueIncome(BuildingConfig building)
+        // {
+        //     BalanceController.AddBalance(IncomeCalculation(building));
+        // }
     }
 }

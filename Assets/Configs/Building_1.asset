@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Building_1
   m_EditorClassIdentifier: 
   Name: "\u0422\u0435\u043F\u043B\u0438\u0446\u044B"
-  Level: 5
+  Level: 2
   IncomeDelay: 3
   BasicCost: 3
   BasicIncome: 4
   Update1:
-    Name: 
-    UpdateIs: 0
-    UpdateCost: 0
-    UpdateIncome: 0
+    Name: "\u041A\u0443\u043A\u0443\u0440\u0443\u0437\u0430"
+    UpdateIs: 1
+    UpdateCost: 10
+    UpdateIncome: 0.5
   Update2:
-    Name: 
+    Name: "\u0421\u0435\u043B\u0435\u043A\u0446\u0438\u044F"
     UpdateIs: 0
-    UpdateCost: 0
-    UpdateIncome: 0
+    UpdateCost: 20
+    UpdateIncome: 1

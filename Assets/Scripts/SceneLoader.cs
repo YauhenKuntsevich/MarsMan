@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] private string sceneName;
+    [FormerlySerializedAs("sceneName")] [SerializeField] private string _sceneName;
 
     public void Load()
     {
-        SceneManager.LoadSceneAsync(sceneName);
+        SceneManager.LoadSceneAsync(_sceneName);
     }
 }

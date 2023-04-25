@@ -1,11 +1,14 @@
 using System;
+using UnityEngine.Serialization;
 
-
-[Serializable]
-public class UpgradeConfig
+namespace Configs
 {
-    public string Name;
-    public bool UpdateIs;
-    public int UpdateCost;
-    public float UpdateIncome;
+    [Serializable]
+    public class UpgradeConfig
+    {
+        [FormerlySerializedAs("Name")] public string _name;
+        [FormerlySerializedAs("UpdateIs")] public bool _updateIs;
+        [FormerlySerializedAs("UpdateCost")] public int _updateCost;
+        [FormerlySerializedAs("UpdateIncome")] public float _updateIncome;
+    }
 }

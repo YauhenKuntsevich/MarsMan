@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Configs
 {
     [CreateAssetMenu(menuName = nameof(BalanceConfig))]
     public class BalanceConfig : ScriptableObject
     {
-        public long Money;
+        [FormerlySerializedAs("Money")] public long _money;
     }
 }

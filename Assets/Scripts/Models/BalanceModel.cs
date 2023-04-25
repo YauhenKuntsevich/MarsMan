@@ -1,24 +1,21 @@
-﻿using System;
-using Configs;
-using Unity.VisualScripting;
+﻿using Configs;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 namespace Models
 {
     public class BalanceModel : MonoBehaviour
     {
         [SerializeField] private BalanceConfig _balanceConfig;
-        public static long Money { get; set; } = 0;
+        public static long Money { get; set; }
 
         private void Start()
         {
-            Money = _balanceConfig.Money;
+            Money = _balanceConfig._money;
         }
 
         private void Update()
         {
-            _balanceConfig.Money = Money;
+            _balanceConfig._money = Money;
         }
     }
 }
