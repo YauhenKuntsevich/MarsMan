@@ -33,26 +33,23 @@ namespace Views
             _buildingIncomeText.text = _buildingController.IncomeCalculation(building).ToString();
             _upgrade1 = building.Update1;
             _upgrade2 = building.Update2;
-
-            var levelUpInstance = Instantiate(_levelUpPrefab, _content);
-            levelUpInstance.DrawLevel(building.Level, building.BasicCost, building.Name);
-
-            if (building.Level > 0)
-            {
-                var upgrade1Instance = Instantiate(_upgradePrefab, _content);
-                var upgrade2Instance = Instantiate(_upgrade2Prefab, _content);
-                upgrade1Instance.DrawUpgrade(_upgrade1);
-                upgrade2Instance.DrawUpgrade(_upgrade2);
-            }
         }
 
         private void Start()
         {
+            DrawBuilding(_buildingConfig);
+            
+            var levelUpInstance = Instantiate(_levelUpPrefab, _content);
+            levelUpInstance.DrawLevel(_buildingConfig);
+            var upgrade1Instance = Instantiate(_upgradePrefab, _content);
+            var upgrade2Instance = Instantiate(_upgrade2Prefab, _content);
+            upgrade1Instance.DrawUpgrade(_upgrade1);
+            upgrade2Instance.DrawUpgrade(_upgrade2);
+                
             if (_buildingConfig.Level >= 1)
-                {
-                    DrawBuilding(_buildingConfig);
-                    StartCoroutine(ChangeMoney(_buildingConfig));
-                }
+            {
+                StartCoroutine(ChangeMoney(_buildingConfig));
+            }
 
         }
 
@@ -82,11 +79,6 @@ namespace Views
             }
 
             BalanceModel.Money += _buildingController.IncomeCalculation(building);
-        }
-
-        public void BuildingLevelUp(int level)
-        {
-            _buildingLevelText.text = level.ToString();
         }
     }
 }

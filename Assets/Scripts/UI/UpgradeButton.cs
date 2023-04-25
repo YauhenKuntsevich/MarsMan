@@ -1,4 +1,5 @@
-﻿using Controllers;
+﻿using System;
+using Controllers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,9 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _buttonText;
         [SerializeField] private Button _button;
         
+        private BalanceController _balanceController = BalanceController.GetInstance();
+        private BuildingController _buildingController = BuildingController.GetInstance();
+
         private UpgradeConfig _upgrade;
 
         public void DrawUpgrade(UpgradeConfig upgrade)
@@ -28,7 +32,15 @@ namespace UI
             
             _button.onClick.AddListener(OnClick);
         }
-            
+
+        private void Update()
+        {
+            if (!_upgrade.UpdateIs)
+            {
+                _button.interactable = _balanceController.BalanceCheck(_upgrade.UpdateCost);
+            }
+        }
+
         private void OnClick()
         {
             //_balanceController.WithdrawFromBalance(_upgrade.UpdateCost);

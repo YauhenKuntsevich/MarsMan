@@ -29,20 +29,11 @@ public sealed class BuildingController : MonoBehaviour
         return (level + 1) * basicCost;
     }
 
-    public void ChangeLevel(string buildingName)
+    public void ChangeLevel(BuildingConfig _buildingConfig)
     {
-        Debug.Log("Дошли сюда");
-        foreach (var building in _buildingsConfigs.Buildings)
-        {
-            Debug.Log("Конфиг есть");
-            if (building.Name == buildingName)
-            {
-                _balanceController.WithdrawFromBalance(LevelCost(building.Level, building.BasicCost));
-                building.Level++;
-                _buildingPrefab.BuildingLevelUp(building.Level);
-                return;
-            }
-        }
+        _balanceController.WithdrawFromBalance(LevelCost(_buildingConfig.Level, _buildingConfig.BasicCost));
+        _buildingConfig.Level++;
+        _buildingPrefab.DrawBuilding(_buildingConfig);
     }
 
     public int IncomeCalculation(BuildingConfig buildingConfig)
