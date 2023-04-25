@@ -16,7 +16,7 @@ namespace Views
         [SerializeField] private TextMeshProUGUI _buildingLevelText;
         [SerializeField] private TextMeshProUGUI _buildingIncomeText;
         
-        [SerializeField] private BuildingsConfigs _buildingsConfigs;
+        [SerializeField] private BuildingConfig _buildingConfig;
         [SerializeField] private LevelUpButton _levelUpPrefab;
         [SerializeField] private UpgradeButton _upgradePrefab;
         [SerializeField] private UpgradeButton _upgrade2Prefab;
@@ -48,14 +48,12 @@ namespace Views
 
         private void Start()
         {
-            foreach (var building in _buildingsConfigs.Buildings)
-            {
-                if (building.Level >= 1)
+            if (_buildingConfig.Level >= 1)
                 {
-                    DrawBuilding(building);
-                    StartCoroutine(ChangeMoney(building));
+                    DrawBuilding(_buildingConfig);
+                    StartCoroutine(ChangeMoney(_buildingConfig));
                 }
-            }
+
         }
 
         // private void Update()
