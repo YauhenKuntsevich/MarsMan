@@ -1,17 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Configs;
 
-public class UpgradeController : MonoBehaviour
+namespace Controllers
 {
-    public UpgradeController(int upgradeCost, int upgradeIncome)
+    public class UpgradeController
     {
-        UpgradeCost = upgradeCost;
-        UpgradeIncome = upgradeIncome;
+        private UpgradeConfig _upgradeConfig;
+    
+        private UpgradeController() { }
+        
+        private static UpgradeController _instance;
+        public static UpgradeController GetInstance()
+        {
+            if (_instance != null) return _instance;
+            _instance = new UpgradeController();
+            return _instance;
+        }
     }
-
-    public int UpgradeCost { get; set; } //Стоимость улучшения
-    public int UpgradeIncome { get; set; } //Бафф от улучшения
-
-    public bool UpgradeIs { get; set; } = false;
 }

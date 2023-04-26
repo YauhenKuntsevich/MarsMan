@@ -1,16 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-[Serializable]
-public class BuildingConfig
+namespace Configs
 {
-    public string Name;
-    public int Level;
-    public int IncomeDelay;
-    public int BasicCost;
-    public int BasicIncome;
-    public UpgradeConfig Update1;
-    public UpgradeConfig Update2;
+    [CreateAssetMenu(menuName = nameof(BuildingConfig))]
+    public class BuildingConfig : ScriptableObject
+    {
+        [FormerlySerializedAs("Name")] public string _name;
+        [FormerlySerializedAs("Level")] public int _level;
+        [FormerlySerializedAs("IncomeDelay")] public int _incomeDelay;
+        [FormerlySerializedAs("BasicCost")] public int _basicCost;
+        [FormerlySerializedAs("BasicIncome")] public int _basicIncome;
+        [FormerlySerializedAs("Update1")] public UpgradeConfig _update1;
+        [FormerlySerializedAs("Update2")] public UpgradeConfig _update2;
+    }
 }
